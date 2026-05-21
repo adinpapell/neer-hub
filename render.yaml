@@ -17,3 +17,7 @@ services:
           property: connectionString
       - key: NODE_ENV
         value: production
+      - key: APP_USER
+        sync: false
+      - key: APP_PASS
+        sync: false

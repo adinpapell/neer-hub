@@ -19,6 +19,29 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Basic Auth — protects the entire app from unauthorized access
+// Set APP_USER and APP_PASS environment variables on Render
+const APP_USER = process.env.APP_USER;
+const APP_PASS = process.env.APP_PASS;
+
+if (APP_USER && APP_PASS) {
+  app.use((req, res, next) => {
+    const auth = req.headers.authorization;
+    if (!auth || !auth.startsWith('Basic ')) {
+      res.set('WWW-Authenticate', 'Basic realm="Neer Hub"');
+      return res.status(401).send('Authentication required');
+    }
+    const decoded = Buffer.from(auth.split(' ')[1], 'base64').toString();
+    const [user, pass] = decoded.split(':');
+    if (user === APP_USER && pass === APP_PASS) {
+      return next();
+    }
+    res.set('WWW-Authenticate', 'Basic realm="Neer Hub"');
+    return res.status(401).send('Invalid credentials');
+  });
+  console.log('  🔒 Authentication enabled');
+}
+
 // API routes
 app.use(apiRoutes);
 
