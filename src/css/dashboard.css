@@ -1,0 +1,146 @@
+/* ===========================
+   Neer Hub — Dashboard Styles
+   =========================== */
+
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+  margin-bottom: var(--space-8);
+}
+
+.stat-card .stat-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-3);
+}
+
+.stat-card.pink .stat-icon   { background: rgba(236,72,153,0.12); color: var(--pink-400); }
+.stat-card.green .stat-icon  { background: rgba(52,211,153,0.12); color: var(--color-success); }
+.stat-card.blue .stat-icon   { background: rgba(96,165,250,0.12); color: var(--color-info); }
+.stat-card.yellow .stat-icon { background: rgba(251,191,36,0.12); color: var(--color-warning); }
+
+.stat-card .stat-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ── Dashboard Sections ── */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+}
+
+.dashboard-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+
+.dashboard-section .section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.dashboard-section .section-title {
+  font-size: var(--font-md);
+  font-weight: var(--weight-semibold);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.dashboard-section .section-title svg {
+  width: 18px;
+  height: 18px;
+  color: var(--accent);
+}
+
+/* ── Quick Task Row ── */
+.quick-task {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.quick-task:last-child {
+  border-bottom: none;
+}
+
+.quick-task-title {
+  flex: 1;
+  font-size: var(--font-sm);
+  font-weight: var(--weight-medium);
+}
+
+.quick-task-date {
+  font-size: var(--font-xs);
+  color: var(--text-muted);
+}
+
+.quick-task.overdue .quick-task-date {
+  color: var(--color-danger);
+}
+
+/* ── Issues Overview ── */
+.issue-count {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+}
+
+.issue-count .issue-bar {
+  flex: 1;
+  height: 6px;
+  background: var(--gray-800);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.issue-count .issue-bar-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width var(--transition-slow);
+}
+
+.issue-label {
+  font-size: var(--font-sm);
+  font-weight: var(--weight-medium);
+  min-width: 100px;
+}
+
+.issue-num {
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+  min-width: 24px;
+  text-align: right;
+}
+
+@media (max-width: 1200px) {
+  .dashboard-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-stats {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,19 @@
+databases:
+  - name: neer-hub-db
+    databaseName: neer_hub
+    plan: free
+
+services:
+  - type: web
+    name: neer-hub
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build && node server/seed.js
+    startCommand: node server.js
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: neer-hub-db
+          property: connectionString
+      - key: NODE_ENV
+        value: production

@@ -1,0 +1,110 @@
+/* ===========================
+   Neer Hub — Settings Styles
+   =========================== */
+
+.settings-sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: 700px;
+}
+
+.settings-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+
+.settings-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.settings-section-title {
+  font-size: var(--font-lg);
+  font-weight: var(--weight-semibold);
+}
+
+.settings-section-desc {
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+  margin-bottom: var(--space-4);
+}
+
+/* ── Category Tag List ── */
+.category-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.category-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  background: var(--gray-800);
+  border-radius: var(--radius-md);
+}
+
+.category-color {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.category-name {
+  flex: 1;
+  font-size: var(--font-sm);
+  font-weight: var(--weight-medium);
+}
+
+.category-actions {
+  display: flex;
+  gap: var(--space-1);
+}
+
+/* ── Export/Import ── */
+.data-actions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.data-action-card {
+  flex: 1;
+  min-width: 200px;
+  padding: var(--space-5);
+  background: var(--gray-800);
+  border: 1px dashed var(--border-color);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.data-action-card:hover {
+  border-color: var(--accent);
+  background: var(--accent-glow);
+}
+
+.data-action-card svg {
+  width: 32px;
+  height: 32px;
+  color: var(--text-muted);
+  margin-bottom: var(--space-2);
+}
+
+.data-action-card h4 {
+  font-size: var(--font-sm);
+  margin-bottom: var(--space-1);
+}
+
+.data-action-card p {
+  font-size: var(--font-xs);
+  color: var(--text-muted);
+}

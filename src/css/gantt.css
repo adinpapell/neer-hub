@@ -1,0 +1,200 @@
+/* ===========================
+   Neer Hub — Gantt Chart Styles
+   =========================== */
+
+.gantt-wrapper {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  overflow-x: auto;
+  min-height: 400px;
+}
+
+.gantt-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-5);
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.gantt-toolbar .view-modes {
+  display: flex;
+  gap: var(--space-1);
+}
+
+/* ── Custom Gantt Overrides ── */
+.gantt-container {
+  overflow-x: auto;
+}
+
+.gantt-container .bar-wrapper {
+  cursor: pointer;
+}
+
+.gantt-container .bar {
+  border-radius: 6px;
+}
+
+.gantt-container .bar-progress {
+  border-radius: 6px;
+}
+
+.gantt-container .grid-header {
+  background: var(--bg-card);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.gantt-container .grid-row {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.gantt-container .tick {
+  stroke: var(--border-subtle);
+}
+
+.gantt-container .today-highlight {
+  fill: var(--accent-glow);
+}
+
+/* ── Custom Built Gantt ── */
+.gantt-chart {
+  width: 100%;
+  min-width: 800px;
+}
+
+.gantt-header {
+  display: flex;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.gantt-label-col {
+  width: 200px;
+  min-width: 200px;
+  font-size: var(--font-xs);
+  font-weight: var(--weight-semibold);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: var(--space-2) var(--space-3);
+}
+
+.gantt-timeline-col {
+  flex: 1;
+  display: flex;
+}
+
+.gantt-date-cell {
+  flex: 1;
+  text-align: center;
+  font-size: var(--font-xs);
+  color: var(--text-muted);
+  padding: var(--space-2) 0;
+  border-left: 1px solid var(--border-subtle);
+}
+
+.gantt-date-cell.today {
+  color: var(--accent);
+  font-weight: var(--weight-semibold);
+}
+
+.gantt-rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.gantt-row {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background var(--transition-fast);
+}
+
+.gantt-row:hover {
+  background: var(--gray-900);
+}
+
+.gantt-row-label {
+  width: 200px;
+  min-width: 200px;
+  padding: 0 var(--space-3);
+  font-size: var(--font-sm);
+  font-weight: var(--weight-medium);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.gantt-row-timeline {
+  flex: 1;
+  position: relative;
+  height: 100%;
+}
+
+.gantt-bar {
+  position: absolute;
+  top: 8px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-3);
+  font-size: var(--font-xs);
+  font-weight: var(--weight-semibold);
+  color: white;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  overflow: hidden;
+}
+
+.gantt-bar:hover {
+  filter: brightness(1.15);
+  box-shadow: var(--shadow-md);
+}
+
+.gantt-bar-progress {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 6px;
+  opacity: 0.3;
+  background: white;
+}
+
+.gantt-bar.moment       { background: var(--cat-moment); }
+.gantt-bar.neer         { background: var(--cat-neer); }
+.gantt-bar.design       { background: var(--cat-design); }
+.gantt-bar.manufacturing{ background: var(--cat-manufacturing); }
+.gantt-bar.commercial   { background: var(--cat-commercial); }
+.gantt-bar.other        { background: var(--cat-other); }
+
+/* ── Gantt Legend ── */
+.gantt-legend {
+  display: flex;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.gantt-legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-xs);
+  color: var(--text-muted);
+}
+
+.gantt-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}

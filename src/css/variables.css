@@ -1,0 +1,122 @@
+/* ===========================
+   Neer Hub — Design Tokens
+   Pink & White on Dark
+   =========================== */
+
+:root {
+  /* ── Brand Colors ── */
+  --pink-50:  #fdf2f8;
+  --pink-100: #fce7f3;
+  --pink-200: #fbcfe8;
+  --pink-300: #f9a8d4;
+  --pink-400: #f472b6;
+  --pink-500: #ec4899;
+  --pink-600: #db2777;
+  --pink-700: #be185d;
+
+  /* ── Neutrals (Dark Theme) ── */
+  --gray-950: #0a0a0f;
+  --gray-900: #111118;
+  --gray-850: #16161f;
+  --gray-800: #1c1c28;
+  --gray-750: #22222f;
+  --gray-700: #2a2a38;
+  --gray-600: #3a3a4a;
+  --gray-500: #5a5a6e;
+  --gray-400: #8888a0;
+  --gray-300: #aaaabe;
+  --gray-200: #ccccdd;
+  --gray-100: #e8e8f0;
+  --gray-50:  #f5f5fa;
+
+  /* ── Semantic Colors ── */
+  --bg-app:       var(--gray-950);
+  --bg-sidebar:   var(--gray-900);
+  --bg-card:      var(--gray-850);
+  --bg-card-hover: var(--gray-800);
+  --bg-input:     var(--gray-800);
+  --bg-modal:     var(--gray-850);
+
+  --text-primary:   var(--gray-50);
+  --text-secondary: var(--gray-400);
+  --text-muted:     var(--gray-500);
+
+  --border-color:   var(--gray-700);
+  --border-subtle:  var(--gray-800);
+
+  --accent:         var(--pink-500);
+  --accent-hover:   var(--pink-400);
+  --accent-subtle:  var(--pink-700);
+  --accent-glow:    rgba(236, 72, 153, 0.15);
+  --accent-glow-strong: rgba(236, 72, 153, 0.3);
+
+  /* ── Status Colors ── */
+  --color-success: #34d399;
+  --color-warning: #fbbf24;
+  --color-danger:  #f87171;
+  --color-info:    #60a5fa;
+
+  /* ── Category Colors ── */
+  --cat-moment:       #ec4899;
+  --cat-neer:         #34d399;
+  --cat-design:       #a78bfa;
+  --cat-manufacturing:#f59e0b;
+  --cat-commercial:   #60a5fa;
+  --cat-other:        #94a3b8;
+
+  /* ── Priority Colors ── */
+  --priority-high:   var(--color-danger);
+  --priority-medium: var(--color-warning);
+  --priority-low:    var(--color-info);
+
+  /* ── Typography ── */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-xs:   0.75rem;
+  --font-sm:   0.8125rem;
+  --font-base: 0.9375rem;
+  --font-md:   1rem;
+  --font-lg:   1.125rem;
+  --font-xl:   1.375rem;
+  --font-2xl:  1.75rem;
+  --font-3xl:  2.25rem;
+
+  --weight-light:    300;
+  --weight-normal:   400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  /* ── Spacing ── */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+
+  /* ── Borders ── */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* ── Shadows ── */
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md:  0 4px 12px rgba(0,0,0,0.4);
+  --shadow-lg:  0 8px 30px rgba(0,0,0,0.5);
+  --shadow-glow: 0 0 20px var(--accent-glow);
+
+  /* ── Transitions ── */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* ── Layout ── */
+  --sidebar-width: 260px;
+  --sidebar-collapsed: 72px;
+  --header-height: 0px;
+}

@@ -1,0 +1,182 @@
+/* ===========================
+   Neer Hub — Issues Styles
+   =========================== */
+
+.issues-toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.issues-toolbar .search-bar {
+  flex: 1;
+  max-width: 320px;
+}
+
+.issue-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.issue-row:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-color);
+}
+
+.issue-row.resolved {
+  opacity: 0.55;
+}
+
+/* ── Case Number Badge ── */
+.issue-case-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  padding: var(--space-1) var(--space-3);
+  background: var(--accent-glow);
+  border: 1px solid rgba(236, 72, 153, 0.25);
+  border-radius: var(--radius-md);
+  font-size: var(--font-sm);
+  font-weight: var(--weight-bold);
+  color: var(--pink-400);
+  font-family: 'Inter', monospace;
+  letter-spacing: 0.02em;
+}
+
+.issue-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.issue-title {
+  font-size: var(--font-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: 3px;
+}
+
+.issue-desc {
+  font-size: var(--font-xs);
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 400px;
+}
+
+.issue-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+}
+
+/* ── Issue Status ── */
+.issue-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  font-size: var(--font-xs);
+  font-weight: var(--weight-semibold);
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.issue-status.needs-attention {
+  background: rgba(248, 113, 113, 0.12);
+  color: var(--color-danger);
+}
+
+.issue-status.needs-attention::before {
+  content: '●';
+  font-size: 8px;
+  animation: pulse-dot 1.5s ease infinite;
+}
+
+.issue-status.in-progress {
+  background: rgba(251, 191, 36, 0.12);
+  color: var(--color-warning);
+}
+
+.issue-status.in-progress::before {
+  content: '◐';
+  font-size: 10px;
+}
+
+.issue-status.resolved {
+  background: rgba(52, 211, 153, 0.12);
+  color: var(--color-success);
+}
+
+.issue-status.resolved::before {
+  content: '✓';
+  font-size: 10px;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.issue-date {
+  font-size: var(--font-xs);
+  color: var(--text-muted);
+  white-space: nowrap;
+  text-align: right;
+  min-width: 70px;
+}
+
+.issue-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.issue-row:hover .issue-actions {
+  opacity: 1;
+}
+
+/* ── Issue Stats ── */
+.issue-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.issue-stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  text-align: center;
+}
+
+.issue-stat-value {
+  font-size: var(--font-2xl);
+  font-weight: var(--weight-bold);
+  line-height: 1;
+  margin-bottom: var(--space-1);
+}
+
+.issue-stat-label {
+  font-size: var(--font-xs);
+  color: var(--text-muted);
+  font-weight: var(--weight-medium);
+}
+
+.issue-stat-card.attention .issue-stat-value { color: var(--color-danger); }
+.issue-stat-card.progress .issue-stat-value  { color: var(--color-warning); }
+.issue-stat-card.resolved .issue-stat-value  { color: var(--color-success); }

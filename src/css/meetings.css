@@ -1,0 +1,138 @@
+/* ===========================
+   Neer Hub — Meetings Styles
+   =========================== */
+
+.meetings-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.meeting-card {
+  display: flex;
+  gap: var(--space-4);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.meeting-card:hover {
+  border-color: var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.meeting-date-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 56px;
+  padding: var(--space-2) var(--space-3);
+  background: var(--accent-glow);
+  border-radius: var(--radius-md);
+}
+
+.meeting-day {
+  font-size: var(--font-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--accent);
+  line-height: 1;
+}
+
+.meeting-month {
+  font-size: var(--font-xs);
+  color: var(--pink-300);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+}
+
+.meeting-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.meeting-title {
+  font-size: var(--font-md);
+  font-weight: var(--weight-semibold);
+  margin-bottom: var(--space-1);
+}
+
+.meeting-time {
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.meeting-time svg {
+  width: 14px;
+  height: 14px;
+  color: var(--text-muted);
+}
+
+.meeting-attendees {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.meeting-attendee-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  background: var(--gray-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: var(--weight-semibold);
+  color: var(--text-secondary);
+  border: 2px solid var(--bg-card);
+  margin-left: -6px;
+}
+
+.meeting-attendee-avatar:first-child {
+  margin-left: 0;
+}
+
+.meeting-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.meeting-card:hover .meeting-actions {
+  opacity: 1;
+}
+
+/* ── Meeting Status ── */
+.meeting-status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--font-xs);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.meeting-status.upcoming {
+  background: rgba(96,165,250,0.12);
+  color: var(--color-info);
+}
+
+.meeting-status.completed {
+  background: rgba(52,211,153,0.12);
+  color: var(--color-success);
+}
+
+.meeting-status.cancelled {
+  background: rgba(248,113,113,0.12);
+  color: var(--color-danger);
+}

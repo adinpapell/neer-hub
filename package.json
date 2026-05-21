@@ -1,0 +1,22 @@
+{
+  "name": "neer-hub",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js & npx vite --host",
+    "dev:server": "node server.js",
+    "dev:client": "vite --host",
+    "build": "vite build",
+    "start": "vite build && node server.js",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^8.0.12"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "pg": "^8.21.0"
+  }
+}
